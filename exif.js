@@ -709,10 +709,10 @@
         // Data format is ordinary JPEG format, starts from 0xFFD8 and ends by 0xFFD9. It seems that
         // JPEG format and 160x120pixels of size are recommended thumbnail format for Exif2.1 or later.
 
-        if (thumbTags['Compression']) {
+     //   if (thumbTags['Compression']) {
             // console.log('Thumbnail image found!');
 
-            switch (thumbTags['Compression']) {
+            switch (thumbTags['Compression'] || 6) {
                 case 6:
                     // console.log('Thumbnail image format is JPEG');
                     if (thumbTags.JpegIFOffset && thumbTags.JpegIFByteCount) {
@@ -731,10 +731,10 @@
             default:
                 console.log("Unknown thumbnail image format '%s'", thumbTags['Compression']);
             }
-        }
-        else if (thumbTags['PhotometricInterpretation'] == 2) {
-            console.log("Thumbnail image format is RGB, which is not implemented.");
-        }
+        // }
+        // else if (thumbTags['PhotometricInterpretation'] == 2) {
+        //     console.log("Thumbnail image format is RGB, which is not implemented.");
+        // }
         return thumbTags;
     }
 
