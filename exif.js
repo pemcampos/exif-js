@@ -90,6 +90,8 @@
         0xA40B : "DeviceSettingDescription",    //
         0xA40C : "SubjectDistanceRange",    // Distance to subject
 
+        0xA431 : "SerialNumber",            // called BodySerialNumber by the EXIF spec.
+
         // other tags
         0xA005 : "InteroperabilityIFDPointer",
         0xA420 : "ImageUniqueID"            // Identifier assigned uniquely to each image
